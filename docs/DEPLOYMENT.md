@@ -87,8 +87,16 @@ Your `local.settings.json` file is **NOT** deployed to Azure for security reason
 7.  Repeat for `MONGO_DB_NAME`.
 
 **Via Azure CLI:**
+
+**On Windows (PowerShell):**
+```powershell
+az functionapp config appsettings set --name kieran-review-report --resource-group khantz --settings 'MONGO_URI=mongodb+srv://khantmongo:P%Kzh12345@khantzaw.global.mongocluster.cosmos.azure.com/?tls=true&authMechanism=SCRAM-SHA-256&retrywrites=false&maxIdleTimeMS=120000' 'MONGO_DB_NAME=khantzaw'
+```
+
+**On macOS/Linux:**
 ```bash
-az functionapp config appsettings set --name <APP_NAME> --resource-group <RESOURCE_GROUP> --settings "MONGO_URI=<YOUR_URI>" "MONGO_DB_NAME=<YOUR_DB_NAME>"
+az functionapp config appsettings set --name kieran-review-report --resource-group khantz --settings 'MONGO_URI=mongodb+srv://khantmongo:P%Kzh12345@khantzaw.global.mongocluster.cosmos.azure.com/?tls=true&authMechanism=SCRAM-SHA-256&retrywrites=false&maxIdleTimeMS=120000' 'MONGO_DB_NAME=khantzaw'
+
 ```
 
 ---
@@ -138,7 +146,8 @@ cd /path/to/azure-review-report
 
 **On Windows (PowerShell):**
 ```powershell
-cd C:\path\to\azure-review-report
+
+
 ```
 
 **On Windows (Command Prompt):**
